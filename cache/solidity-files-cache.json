@@ -1,0 +1,75 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/alex-stend/new_test/hardhat/contracts/Test.sol": {
+      "lastModificationDate": 1637246874438,
+      "contentHash": "b1cfba5d30c9f4a9329a6e33508c7ed6",
+      "sourceName": "contracts/Test.sol",
+      "solcConfig": {
+        "version": "0.8.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "Test"
+      ]
+    },
+    "/home/alex-stend/new_test/PaymentSplitter/contracts/Test.sol": {
+      "lastModificationDate": 1637324816068,
+      "contentHash": "bb4f37346b71ddc9070c1244e59fa57f",
+      "sourceName": "contracts/Test.sol",
+      "solcConfig": {
+        "version": "0.8.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "Test"
+      ]
+    }
+  }
+}

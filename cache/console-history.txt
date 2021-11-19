@@ -1,0 +1,67 @@
+await test.setShares([20, 60, 20])
+await test.setShares([20 60 20])
+await test.setShares(20)
+await test.setShares([20])
+await test.setShares([20 43 4])
+await test.setShares([20, 43, 4])
+const test = await Test.attach('0x0165878A594ca255338adfa4d48449f69242Eb8F');
+const Test = await ethers.getContractFactory('Test');
+await test.setShares((20, 43, 4))
+await test.setShares([20, 43, 4])
+await test.setShares(20, 29, 30, 3)
+await test.setShares(20, 29, 30)
+const test = await Test.attach('0x0165878A594ca255338adfa4d48449f69242Eb8F');
+const Test = await ethers.getContractFactory('Test');
+(await test.getSum()).toNumber()
+await test.getSum()
+await test.setSum(1000)
+const test = await Test.attach('0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9');
+const Test = await ethers.getContractFactory('Test');
+await test.setSum(1000)
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Test = await ethers.getContractFactory('Test');
+await test.setSum(1000)
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Test = await ethers.getContractFactory('Test');
+(await test.retrieve()).toNumber()
+(await box.retrieve()).toNumber()
+await test.store(5)
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Test = await ethers.getContractFactory('Test');
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Test = await ethers.getContractFactory('Test');
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+await test.retrieve()
+await box.retrieve()
+(await test.retrieve()).toNumber()
+await test.store(5)
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Test = await ethers.getContractFactory('Test');
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Test = await ethers.getContractFactory('Test');
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+.help
+help
+ls
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+(await test.retrieve()).toNumber()
+await test.store(5)
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Test = await ethers.getContractFactory('Test');
+(await test.retrieve()).toNumber()
+await test.store(5)
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Test = await ethers.getContractFactory('Test');
+(await test_contract.retrieve()).toNumber()
+await test_contract.store(5)
+const test_contract = await Test_contract.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const box = await Box.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const box = await Box.attach('
+0x5FbDB2315678afecb367f032d93F642f64180aa3
+const Test_contract = await ethers.getContractFactory('Test_contract');
+await box.deployTransaction.wait()
+await box.retrieve()
+(await box.retrieve()).toNumber()
+await box.store(5)
+const box = await Box.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Box = await ethers.getContractFactory('Box');
