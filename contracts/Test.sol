@@ -8,17 +8,7 @@ contract Test {
     uint256[] private shares;
     address payable[] private addresses;
 
-    // Emitted when the stored value changes
     event SumChanged(uint256 newValue);
-
-    struct Person {
-        uint funds;
-        address addr;
-    }
-
-    Person[] public persons;
-
-    mapping(bytes32 => Person[]) personList;
 
     function setSum(uint256 Sum) public{
         sum = Sum;
