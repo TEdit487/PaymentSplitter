@@ -1,3 +1,17 @@
+(await test.getPath()).toNumber()
+(await test.getSum()).toNumber()
+(await test.setSum(1000)).toNumber()
+await test.getSum()
+await test.getSum(1000)
+await test.setSum(1000)
+await test.setShares([20, 60, 20])
+const test = await Test.attach('0x610178dA211FEF7D417bC0e6FeD39F05609AD788');
+const Test = await ethers.getContractFactory('Test');
+await test.setShares([20, 60, 20], [0, 0, 0])
+await test.setShares([20, 60, 20], [0x366f53426c1ve52335t, 0xf2acfb61e345e55fe4, 0xf2acfb61e345e55fe1])
+await test.setShares([20, 60, 20], [0xc0ffee254729296a45a3885639AC7E10F9d54979, 0xc0ffee254729296a45a3885639AC7E10F9d54978, 0xc0ffee254729296a45a3885639AC7E10F9d54977])
+const test = await Test.attach('0x8A791620dd6260079BF849Dc5567aDC3F2FdC318');
+const Test = await ethers.getContractFactory('Test');
 await test.setShares([20, 60, 20])
 await test.setShares([20 60 20])
 await test.setShares(20)

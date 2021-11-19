@@ -8,6 +8,8 @@ contract Test {
     uint256[] private shares;
     address payable[] private addresses;
 
+    uint256 perc;
+
     event SumChanged(uint256 newValue);
 
     function setSum(uint256 Sum) public{
@@ -15,7 +17,7 @@ contract Test {
         emit SumChanged(Sum);
     }
 
-    function setShares(uint256[] memory _shares, address payable[] memory _addresses) public {
+    function setShares(uint256[] memory _shares) public {
         num_of_members = _shares.length;
         shares = _shares;
         sharesSum = 0;
@@ -26,7 +28,7 @@ contract Test {
             sharesSum == 100,
             "share's summary is wrong!"
         );
-        addresses = _addresses;
+        //addresses = _addresses;
     }
 
     function split() public{
@@ -38,4 +40,15 @@ contract Test {
     function getSum() public view returns (uint256) {
         return sum;
     }
+
+    function getPerc(uint256 _perc) public view{
+        perc = _perc;
+    }
+
+    function getPath() public view returns (uint256) {   
+        getPerc(100); 
+        uint256 path = (shares[0]*sum/100) / perc;
+        return path;
+    }
+
 }
