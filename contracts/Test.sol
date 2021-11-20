@@ -41,13 +41,8 @@ contract Test {
         return sum;
     }
 
-    function getPerc(uint256 _perc) public view{
-        perc = _perc;
-    }
-
     function getPath() public view returns (uint256) {   
-        getPerc(100); 
-        uint256 path = (shares[0]*sum/100) / perc;
+        uint256 path = (shares[0]*sum/100);
         return path;
     }
 

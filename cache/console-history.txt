@@ -1,3 +1,8 @@
+(await test.getSum()).toNumber()
+await test.setSum(1000)
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Test = await ethers.getContractFactory('Test');
+await test.setSum(1000)
 (await test.getPath()).toNumber()
 (await test.getSum()).toNumber()
 (await test.setSum(1000)).toNumber()
