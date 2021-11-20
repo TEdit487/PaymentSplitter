@@ -22,7 +22,6 @@ contract Test {
                        address payable[] memory _addresses) public {
         num_of_members = _shares.length;
         shares = _shares;
-        emit sharesChanged(shares);
         sharesSum = 0;
         for (uint i = 0; i < shares.length; i++) {
             sharesSum += shares[i];
@@ -31,6 +30,7 @@ contract Test {
             sharesSum == 100,
             "share's summary is wrong!"
         );
+        emit sharesChanged(shares);
         addresses = _addresses;
     }
 
