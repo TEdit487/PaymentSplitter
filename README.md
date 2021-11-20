@@ -5,12 +5,12 @@
 
     1.1 cd path-to-your-project    
     1.2 npx hardhat node    
-    1.3 if you get error like Error HH604: Error running JSON-RPC server: error:0308010C:digital envelope routines::unsupported launch command: export NODE_OPTIONS=--openssl-legacy-provider
+    1.3 if you get error like Error HH604: Error running JSON-RPC server: error:0308010C:digital envelope routines::unsupported then launch command: export NODE_OPTIONS=--openssl-legacy-provider
     
 2. Open one more terminal window and launch commands:
 
     2.1 cd path-to-your-project  
-    2.2 npx hardhat run --network localhost scripts/deploy.js (where deploy.js name of your js scrips)
+    2.2 npx hardhat run --network localhost scripts/deploy.js (where deploy.js your js script name)
 
     now there're the key in console. save it.
 
