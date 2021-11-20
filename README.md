@@ -22,6 +22,6 @@
 
 3. Example for this case:
     
-    3.1 const Test = await ethers.getContractFactory('Test');
+    3.1 const Test = await ethers.getContractFactory('Test');  
     3.2 const box = await Box.attach('key_obtained_in_2.2');
     3.3 await test.any-smart-contract-function(args of this func)
