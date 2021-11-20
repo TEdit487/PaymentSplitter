@@ -24,4 +24,4 @@
     
     3.1 const Test = await ethers.getContractFactory('Test');
     3.2 const box = await Box.attach('key_obtained_in_2.2');
-    3.3 await test.any-smart-sontract-function(args of this func)
+    3.3 await test.any-smart-contract-function(args of this func)
