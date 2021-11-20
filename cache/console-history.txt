@@ -1,3 +1,18 @@
+await test.split()
+await test.setShares([20, 60, 20], [])
+await test.setShares([20, 60, 20], [0x00000000000000000000000000000000000000000000000000, 0x00000000000000000000000000000000000000000000000000, 0x00000000000000000000000000000000000000000000000000])
+await test.setShares([20, 60, 20], [0, 0, 0])
+const test = await Test.attach('0x0165878A594ca255338adfa4d48449f69242Eb8F');
+const Test = await ethers.getContractFactory('Test');
+(await test.getPath()).toNumber()
+await test.setShares([10, 60, 30])
+(await test.getPath()).toNumber()
+await test.setSum(100)
+await test.setSum(1000)
+(await test.getPath()).toNumber()
+await test.getPath()
+await test.getPath
+await test.setShares([20, 60, 20])
 (await test.getSum()).toNumber()
 await test.setSum(1000)
 const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
