@@ -1,3 +1,44 @@
+const transaction = await PaymentSplitter.deposit({ value: ethers.utils.parseEther("0.1") })
+await paymentSplitter.setAmount({ value: 0.1 })
+const transaction = await PaymentSplitter.deposit({ value: ethers.utils.parseEther("0.1") })
+const transaction = await PaymentSplitter.deposit({ value: ethers.utils.parseEther("0.1") 
+const paymentSplitter = await PaymentSplitter.attach('0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0');
+const PaymentSplitter = await ethers.getContractFactory('PaymentSplitter');
+(await paymentSplitter.getAmount()).toNumber()
+await paymentSplitter.getAmount()
+await paymentSplitter.setAmount()
+const paymentSplitter = await PaymentSplitter.attach('0x610178dA211FEF7D417bC0e6FeD39F05609AD788');
+const PaymentSplitter = await ethers.getContractFactory('PaymentSplitter');
+(await paymentSplitter.getPath()).toNumber()
+await paymentSplitter.getPath()
+await paymentSplitter.setShares([30,50,20], ["0x71be63f3384f5fb98995898a86b02fb2426c5788", "0xbcd4042de499d14e55001ccbb24a551f3b954096", "0xa0ee7a142d267c1f36714e4a8f75612f20a79720"])
+await paymentSplitter.setShares([30,50,20], ["0x71be63f3384f5fb98995898a86b02fb2426c5788", "0xbcd4042de499d14e55001ccbb24a551f3b954096", (0xa0ee7a142d267c1f36714e4a8f75612f20a79720).toString()])
+await paymentSplitter.setShares([30,50,20], ["0x71be63f3384f5fb98995898a86b02fb2426c5788", "0xbcd4042de499d14e55001ccbb24a551f3b954096", 0xa0ee7a142d267c1f36714e4a8f75612f20a79720.toString()])
+await paymentSplitter.setShares([30,50,20], ["0x71be63f3384f5fb98995898a86b02fb2426c5788", "0xbcd4042de499d14e55001ccbb24a551f3b954096", "0xa0ee7a142d267c1f36714e4a8f75612f20a79720"])
+await test.setShares([20, 60, 20], ["0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"])
+await paymentSplitter.setSum()
+const paymentSplitter = await PaymentSplitter.attach('0x0165878A594ca255338adfa4d48449f69242Eb8F');
+const PaymentSplitter = await ethers.getContractFactory('PaymentSplitter');
+const paymentSplitter = await PaymentSplitter.attach('0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512');
+const PaymentSplitter = await ethers.getContractFactory('PaymentSplitter');
+await paymentSplitter.setSum()
+await test.setSum()
+const paymentSplitter = await PaymentSplitter.attach('0x610178dA211FEF7D417bC0e6FeD39F05609AD788');
+const PaymentSplitter = await ethers.getContractFactory('PaymentSplitter');
+await test.setSum()
+const test = await Test.attach('0x5FC8d32690cc91D4c39d9d3abcBD16989F875707');
+const Test = await ethers.getContractFactory('Test');
+await test.setSum()
+const test = await Test.attach('0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9');
+const Test = await ethers.getContractFactory('Test');
+await test.setShares([20, 60, 20], [0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266, 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266, 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266])
+await test.setShares([20, 60, 20], [0x70997970c51812dc3a010c7d01b50e0d17dc79c8, 0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc, 0x90f79bf6eb2c4f870365e785982e1f101e93b906])
+await test.setShares([20, 60, 20], [])
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Test = await ethers.getContractFactory('Test');
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const Test = await ethers.getContractFactory('Test');
+const test = await Test.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
 await test.split()
 await test.setShares([20, 60, 20], [])
 await test.setShares([20, 60, 20], [0x00000000000000000000000000000000000000000000000000, 0x00000000000000000000000000000000000000000000000000, 0x00000000000000000000000000000000000000000000000000])

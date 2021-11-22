@@ -36,10 +36,10 @@
         "Test"
       ]
     },
-    "/home/alex-stend/new_test/PaymentSplitter/contracts/Test.sol": {
-      "lastModificationDate": 1637404072479,
-      "contentHash": "574ed9858930af0d2ee8187a5c1f01fb",
-      "sourceName": "contracts/Test.sol",
+    "/home/alex-stend/new_test/PaymentSplitter/contracts/PaymentSplitter.sol": {
+      "lastModificationDate": 1637595364662,
+      "contentHash": "8be5efd039403134200a21988fb5384d",
+      "sourceName": "contracts/PaymentSplitter.sol",
       "solcConfig": {
         "version": "0.8.1",
         "settings": {
@@ -68,7 +68,7 @@
         "^0.8.1"
       ],
       "artifacts": [
-        "Test"
+        "PaymentSplitter"
       ]
     }
   }

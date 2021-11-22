@@ -1,15 +1,15 @@
 // scripts/deploy.js
 async function main() {
     // We get the contract to deploy
-    const Test = await ethers.getContractFactory('Test');
-    console.log('Deploying Test...');
+    const PaymentSplitter = await ethers.getContractFactory('PaymentSplitter');
+    console.log('Deploying PaymentSplitter...');
  
-    // Instantiating a new Test smart contract
-    const test = await Test.deploy();
+    // Instantiating a new PaymentSplitter smart contract
+    const paymentSplitter = await PaymentSplitter.deploy();
  
     // Waiting for the deployment to resolve
-    await test.deployed();
-    console.log('Test deployed to:', test.address);
+    await paymentSplitter.deployed();
+    console.log('PaymentSplitter deployed to:', paymentSplitter.address);
  }
  
  main()
