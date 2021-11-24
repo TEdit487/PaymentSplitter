@@ -1,3 +1,15 @@
+await paymentSplitter.setShares([{perc_big_part:19, perc_lil_part:20, addresses: "0x2546bcd3c84621e976d8185a91a922ae77ecec30"}]);
+await paymentSplitter.setShares({perc_big_part:19, perc_lil_part:20, addresses: "0x2546bcd3c84621e976d8185a91a922ae77ecec30"});
+await paymentSplitter.setShares({19, 20, "0x2546bcd3c84621e976d8185a91a922ae77ecec30"});
+await paymentSplitter.setShares([{19, 20, "0x2546bcd3c84621e976d8185a91a922ae77ecec30"}]);
+await paymentSplitter.setShares([{perc_big_part:19, perc_lil_part:20, addresses: "0x2546bcd3c84621e976d8185a91a922ae77ecec30"}]);
+await paymentSplitter.setShares([{19 20 "0x2546bcd3c84621e976d8185a91a922ae77ecec30"}]);
+await paymentSplitter.setShares([{19, 20, "0x2546bcd3c84621e976d8185a91a922ae77ecec30"}]);
+await paymentSplitter.setShares({19, 20, "0x2546bcd3c84621e976d8185a91a922ae77ecec30"});
+await paymentSplitter.setShares({perc_big_part:19, perc_lil_part:20, addresses: "0x2546bcd3c84621e976d8185a91a922ae77ecec30"});
+await paymentSplitter.setShares({perc_big_part:19, perc_lil_part:20, addresses: addr1.address})
+const paymentSplitter = await PaymentSplitter.attach('0xa513E6E4b8f2a923D98304ec87F64353C4D5C853');
+const PaymentSplitter = await ethers.getContractFactory('PaymentSplitter');
 const transaction = await PaymentSplitter.deposit({ value: ethers.utils.parseEther("0.1") })
 await paymentSplitter.setAmount({ value: 0.1 })
 const transaction = await PaymentSplitter.deposit({ value: ethers.utils.parseEther("0.1") })

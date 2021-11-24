@@ -13,11 +13,11 @@ contract PaymentSplitter {
 
         uint256 perc_big_part;
         uint256 perc_lil_part;
-        address payable[] addresses;
+        address payable addresses;
 
     }
 
-    Member[] public members;
+    Member[] members;
     event membersChanged(Member[] members);
 
     constructor() {
@@ -30,27 +30,26 @@ contract PaymentSplitter {
         emit amountChanged(amount);
     }
 
-    function setShares(Member[] memory _members) public {
-        members = _members;
-        num_of_members = members.length;
+    function setShares(Member[] memory _members) public returns (uint256){
+        num_of_members = _members.length;
         sharesSum = 0;
         for (uint i = 0; i < num_of_members; i++) {
-            sharesSum += members[i].perc_big_part*100 + members[i].perc_lil_part;
+            sharesSum += members[0].perc_big_part*100 + members[0].perc_lil_part;
         }
         require(
             sharesSum == 10000,
             "shares sum is wrong!"
         );
-        
+        for (uint i = 0; i < num_of_members; i++) {
+            members.push(_members[i]);
+        }
         emit membersChanged(members);
+        return num_of_members;
     }
 
     function split() public{
-        
         for (uint i = 0; i < num_of_members; i++) {
-            //members[i].addresses.transfer((members[i].perc_big_part*100 + members[i].perc_lil_part)*amount/10000);
-            address payable send_addr = members[i].addresses;
-            send_addr.transfer((members[i].perc_big_part*100 + members[i].perc_lil_part)*amount/10000);
+            members[i].addresses.transfer((members[i].perc_big_part*100 + members[i].perc_lil_part)*amount/10000);
         }
     }
 

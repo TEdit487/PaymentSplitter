@@ -11,9 +11,7 @@ describe("PaymentSplitter contract", function () {
   let addr4;
   let addr5;
   let addr6;
-  let members = [{perc_big_part:19, perc_lil_part:20, addresses: addr1.address},
-                 {perc_big_part:60, perc_lil_part:60, addresses: addr2.address}, 
-                 {perc_big_part:20, perc_lil_part:20, addresses: addr3.address}];
+
   
   beforeEach(async function () {
     PaymentSplitter = await ethers.getContractFactory("PaymentSplitter");
@@ -39,9 +37,15 @@ describe("PaymentSplitter contract", function () {
   describe("Transactions", function () {
     
     it("Should equals shares and addresses lengths", async function () {
+      let members = [{perc_big_part:19, perc_lil_part:20, addresses: addr1.address},
+                     {perc_big_part:60, perc_lil_part:60, addresses: addr2.address}, 
+                     {perc_big_part:20, perc_lil_part:20, addresses: addr3.address}];
+      console.log(members);
+      let wrong_members = [{perc_big_part:19, perc_lil_part:20, addresses: addr1.address},
+                           {perc_big_part:61, perc_lil_part:60, addresses: addr2.address}, 
+                           {perc_big_part:24, perc_lil_part:20, addresses: addr3.address}];
       await hardhatSplitter.setShares(members);
-      const membersNum = (await hardhatSplitter.getMembersNum()).toNumber();
-      expect((await hardhatSplitter.getAddressesNum()).toNumber()).to.equal(membersNum);
+      // await hardhatSplitter.setShares(wrong_members);
     });
   });
 
