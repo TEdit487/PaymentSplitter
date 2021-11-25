@@ -75,6 +75,8 @@ describe("PaymentSplitter contract", function () {
       for (var i = 0; i < memb_len; i++) {
         const sharePath = await hardhatSplitter.getPath(i);
         console.log(sharePath.toNumber());
+        var processing_part = (members[i].perc_big_part*100 + members[i].perc_lil_part)*amount/10000;
+        expect((await hardhatSplitter.getPath(i)).toNumber()).to.equal(processing_part);
       }
       
     });
