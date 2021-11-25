@@ -36,17 +36,17 @@ describe("PaymentSplitter contract", function () {
 
   describe("Transactions", function () {
     
-    it("Should set the right shares (sharesSum equal 100%)", async function () {
+    it("Should set the correct shares (sharesSum equal 100%)", async function () {
       let members = [{perc_big_part:19, perc_lil_part:20, addresses: addr1.address},
                      {perc_big_part:60, perc_lil_part:60, addresses: addr2.address}, 
                      {perc_big_part:20, perc_lil_part:20, addresses: addr3.address}];
       console.log(members);
-      
+
       await hardhatSplitter.setShares(members);
     });
     var test_wrong_memory = false;
     
-    it("Should set the right shares (sharesSum NOT equal 100%)", async function () {
+    it("Should set the correct shares (sharesSum NOT equal 100%)", async function () {
       if (test_wrong_memory){
         let wrong_members = [{perc_big_part:19, perc_lil_part:20, addresses: addr1.address},
           {perc_big_part:61, perc_lil_part:60, addresses: addr2.address}, 
