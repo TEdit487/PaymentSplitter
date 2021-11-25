@@ -58,24 +58,24 @@ describe("PaymentSplitter contract", function () {
     });
 
     it("Should process correct split", async function () {
-      let members = [{perc_big_part:19, perc_lil_part:20, addresses: addr1.address},
-        {perc_big_part:60, perc_lil_part:60, addresses: addr2.address}, 
-        {perc_big_part:20, perc_lil_part:20, addresses: addr3.address}];
+      let correct_split_members = [{perc_big_part:14, perc_lil_part:32, addresses: addr1.address},
+                                   {perc_big_part:50, perc_lil_part:43, addresses: addr2.address}, 
+                                   {perc_big_part:35, perc_lil_part:25, addresses: addr3.address}];
 
-      var amount = 30000;
+      var amount = 40000;
 
       await hardhatSplitter.setAmount({ value: amount });
-      await hardhatSplitter.setShares(members);
+      await hardhatSplitter.setShares(correct_split_members);
       await hardhatSplitter.split();
 
       const member = await hardhatSplitter.getMembers(0);
       console.log(member);
 
-      const memb_len = Object.keys(members).length;
+      const memb_len = Object.keys(correct_split_members).length;
       for (var i = 0; i < memb_len; i++) {
         const sharePath = await hardhatSplitter.getPath(i);
         console.log(sharePath.toNumber());
-        var processing_part = (members[i].perc_big_part*100 + members[i].perc_lil_part)*amount/10000;
+        var processing_part = (correct_split_members[i].perc_big_part*100 + correct_split_members[i].perc_lil_part)*amount/10000;
         expect((await hardhatSplitter.getPath(i)).toNumber()).to.equal(processing_part);
       }
       
