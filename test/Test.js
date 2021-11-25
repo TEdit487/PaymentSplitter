@@ -36,16 +36,47 @@ describe("PaymentSplitter contract", function () {
 
   describe("Transactions", function () {
     
-    it("Should equals shares and addresses lengths", async function () {
+    it("Should set the right shares (sharesSum equal 100%)", async function () {
       let members = [{perc_big_part:19, perc_lil_part:20, addresses: addr1.address},
                      {perc_big_part:60, perc_lil_part:60, addresses: addr2.address}, 
                      {perc_big_part:20, perc_lil_part:20, addresses: addr3.address}];
       console.log(members);
-      let wrong_members = [{perc_big_part:19, perc_lil_part:20, addresses: addr1.address},
-                           {perc_big_part:61, perc_lil_part:60, addresses: addr2.address}, 
-                           {perc_big_part:24, perc_lil_part:20, addresses: addr3.address}];
+      
       await hardhatSplitter.setShares(members);
-      // await hardhatSplitter.setShares(wrong_members);
+    });
+    var test_wrong_memory = false;
+    
+    it("Should set the right shares (sharesSum NOT equal 100%)", async function () {
+      if (test_wrong_memory){
+        let wrong_members = [{perc_big_part:19, perc_lil_part:20, addresses: addr1.address},
+          {perc_big_part:61, perc_lil_part:60, addresses: addr2.address}, 
+          {perc_big_part:24, perc_lil_part:20, addresses: addr3.address}];
+        console.log(wrong_members);
+
+        await hardhatSplitter.setShares(wrong_members);
+      }
+    });
+
+    it("Should process correct split", async function () {
+      let members = [{perc_big_part:19, perc_lil_part:20, addresses: addr1.address},
+        {perc_big_part:60, perc_lil_part:60, addresses: addr2.address}, 
+        {perc_big_part:20, perc_lil_part:20, addresses: addr3.address}];
+
+      var amount = 30000;
+
+      await hardhatSplitter.setAmount({ value: amount });
+      await hardhatSplitter.setShares(members);
+      await hardhatSplitter.split();
+
+      const member = await hardhatSplitter.getMembers(0);
+      console.log(member);
+
+      const memb_len = Object.keys(members).length;
+      for (var i = 0; i < memb_len; i++) {
+        const sharePath = await hardhatSplitter.getPath(i);
+        console.log(sharePath.toNumber());
+      }
+      
     });
   });
 

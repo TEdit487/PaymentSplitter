@@ -30,11 +30,11 @@ contract PaymentSplitter {
         emit amountChanged(amount);
     }
 
-    function setShares(Member[] memory _members) public returns (uint256){
+    function setShares(Member[] memory _members) public {
         num_of_members = _members.length;
         sharesSum = 0;
         for (uint i = 0; i < num_of_members; i++) {
-            sharesSum += members[0].perc_big_part*100 + members[0].perc_lil_part;
+            sharesSum += _members[i].perc_big_part*100 + _members[i].perc_lil_part;
         }
         require(
             sharesSum == 10000,
@@ -44,7 +44,6 @@ contract PaymentSplitter {
             members.push(_members[i]);
         }
         emit membersChanged(members);
-        return num_of_members;
     }
 
     function split() public{
@@ -58,8 +57,16 @@ contract PaymentSplitter {
     }
 
     function getPath(uint256 i) public view returns (uint256) {   
-        uint256 path = ((members[i].perc_big_part*100 + members[i].perc_lil_part)*amount/10000);
+        uint256 path = (members[i].perc_big_part*100 + members[i].perc_lil_part)*amount/10000;
         return path;
+    }
+
+    function getMembersNum() public view returns (uint256) {
+        return num_of_members;
+    }
+
+    function getMembers(uint256 i) public view returns (Member memory) {
+        return members[i];
     }
 
 }
