@@ -37,8 +37,8 @@
       ]
     },
     "/home/alex-stend/new_test/PaymentSplitter/contracts/PaymentSplitter.sol": {
-      "lastModificationDate": 1637839460539,
-      "contentHash": "397844490ee89548fbc3450e7e8fcbbb",
+      "lastModificationDate": 1637910083437,
+      "contentHash": "fe4c1c21a8f3ed9171df90826623fdd9",
       "sourceName": "contracts/PaymentSplitter.sol",
       "solcConfig": {
         "version": "0.8.1",

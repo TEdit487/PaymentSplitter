@@ -48,7 +48,7 @@ contract PaymentSplitter {
 
     function split() public{
         for (uint i = 0; i < num_of_members; i++) {
-            members[i].addresses.transfer((members[i].perc_big_part*100 + members[i].perc_lil_part)*amount/10000);
+            members[i].addresses.transfer(getPath(i));
         }
     }
 
