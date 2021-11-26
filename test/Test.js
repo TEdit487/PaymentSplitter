@@ -61,7 +61,7 @@ describe("PaymentSplitter contract", function () {
       let correct_split_members = [{perc_big_part:14, perc_lil_part:31, addresses: addr1.address},
                                    {perc_big_part:40, perc_lil_part:33, addresses: addr2.address}, 
                                    {perc_big_part:24, perc_lil_part:14, addresses: addr3.address},
-                                   {perc_big_part:21, perc_lil_part:22, addresses: addr3.address},];
+                                   {perc_big_part:21, perc_lil_part:22, addresses: addr4.address},];
 
       var amount = 40000;
 
