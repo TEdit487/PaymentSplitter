@@ -1,18 +1,14 @@
 pragma solidity ^0.8.1;
 
 contract PaymentSplitter {
-    uint256 private amount;
-    uint256 num_of_members;
-    uint256 private sharesSum;
+    uint48 num_of_members;
+    uint48 private sharesSum;
     address public owner;
-    //address payable send_addr;
-
-    event amountChanged(uint256 newAmount);
 
     struct Member{
 
-        uint256 perc_big_part;
-        uint256 perc_lil_part;
+        uint48 perc_big_part;
+        uint48 perc_lil_part;
         address payable addresses;
 
     }
@@ -24,17 +20,13 @@ contract PaymentSplitter {
         owner = msg.sender;
     }
 
-    function setAmount() payable public{
-        amount = msg.value;
-        //amount = 20000;
-        emit amountChanged(amount);
-    }
 
     function setShares(Member[] memory _members) public {
-        num_of_members = _members.length;
+        delete members;
+        num_of_members = uint48(_members.length);
         sharesSum = 0;
         for (uint i = 0; i < num_of_members; i++) {
-            sharesSum += _members[i].perc_big_part*100 + _members[i].perc_lil_part;
+            sharesSum += uint48(_members[i].perc_big_part*100 + _members[i].perc_lil_part);
         }
         require(
             sharesSum == 10000,
@@ -46,17 +38,14 @@ contract PaymentSplitter {
         emit membersChanged(members);
     }
 
-    function split() public{
+    function split() payable public{
+        // uint256 amount
         for (uint i = 0; i < num_of_members; i++) {
-            members[i].addresses.transfer(getPath(i));
+            members[i].addresses.transfer(getPath(i, msg.value));
         }
     }
 
-    function getAmount() public view returns (uint256) {
-        return amount;
-    }
-
-    function getPath(uint256 i) public view returns (uint256) {   
+    function getPath(uint256 i, uint256 amount) public view returns (uint256) {   
         uint256 path = (members[i].perc_big_part*100 + members[i].perc_lil_part)*amount/10000;
         return path;
     }
